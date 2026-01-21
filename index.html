@@ -7,12 +7,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
 
   <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
+    * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       font-family: 'Montserrat', Arial, sans-serif;
       background: linear-gradient(135deg, #0f0f14, #1a1a2e);
@@ -22,7 +17,6 @@
       flex-direction: column;
       align-items: center;
     }
-
     header {
       text-align: center;
       padding: 60px 20px 40px;
@@ -33,7 +27,6 @@
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
-
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -42,7 +35,6 @@
       width: 100%;
       max-width: 1200px;
     }
-
     .card {
       background: rgba(255, 255, 255, 0.08);
       border-radius: 20px;
@@ -52,27 +44,23 @@
       text-align: center;
       backdrop-filter: blur(8px);
     }
-
     .card:hover {
       transform: translateY(-12px) scale(1.03);
       box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6);
       background: rgba(255, 255, 255, 0.15);
     }
-
     .card img {
       width: 100%;
       height: 140px;
       object-fit: cover;
       border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     }
-
     .card h2 {
       margin: 16px 0 8px;
       font-size: 20px;
       font-weight: 600;
       color: #fff;
     }
-
     .card p {
       font-size: 14px;
       opacity: 0.85;
@@ -80,7 +68,6 @@
       color: #f0f0f0;
       transition: color 0.2s ease;
     }
-
     .card:hover p {
       color: #ff6ec7;
       font-weight: 600;
@@ -94,62 +81,58 @@
   <div class="grid" id="grid"></div>
 
   <script>
-    const names = [
-      "Amanda The Adventurer",		
-      "Andys Apple Farm",		
-      "Baldi Plus",		
-      "Baldi Remaster",		
-      "Bendy",		
-      "Bergentruck",		
-      "Bloodmoney",		
-      "Buckshot Roulette",		
-      "Class Of 09",		
-      "Cuphead",		
-      "Dead Plate",		
-      "Deadseat",		
-      "Deltarune Web Main",
-      "Do Not Take This Cat Home",
-      "Fears To Fathom",
-      "Happy Sheepies",
-      "Hotline Miami",
-      "Kindergarten",
-      "Lacys Flashgames",
-      "Milkman Karlson",
-      "Omori Fixed",
-      "People Playground",
-      "Pizza Tower",
-      "Raft",
-      "Repo",
-      "Slender",
-      "Speed Stars",
-      "Thats Not My Neighbor",
-      "The Man In The Window",
-      "Ube Main",
-      "Ultrakill",
-      "Underswap",
-      "Undertale Main",
-      "Undertale Red Pc Ver",
-      "Undertale Texturepack",
-      "Undertale Yellow",
-      "Web Fishing",
-      "Yume Nikki",
-    ];
-
     const grid = document.getElementById("grid");
 
-    for (let i = 0; i < names.length; i++) {
+    const cards = [
+      { title: "Amanda The Adventurer", image: "https://tse4.mm.bing.net/th/id/OIP.IQaWt7ftornapYXdSaKPIQHaFw?rs=1&pid=ImgDetMain&o=7&rm=3", text: "Open" },
+      { title: "Andys Apple Farm", image: "images/2.png", text: "Open" },
+      { title: "Baldi Plus", image: "images/3.png", text: "Open" },
+      { title: "Baldi Remaster", image: "images/4.png", text: "Open" },
+      { title: "Bendy", image: "images/5.png", text: "Open" },
+      { title: "Bergentruck", image: "images/6.png", text: "Open" },
+      { title: "Bloodmoney", image: "images/7.png", text: "Open" },
+      { title: "Buckshot Roulette", image: "images/8.png", text: "Open" },
+      { title: "Class Of 09", image: "images/9.png", text: "Open" },
+      { title: "Cuphead", image: "images/10.png", text: "Open" },
+      { title: "Dead Plate", image: "images/11.png", text: "Open" },
+      { title: "Deadseat", image: "images/12.png", text: "Open" },
+      { title: "Deltarune Web Main", image: "images/13.png", text: "Open" },
+      { title: "Do Not Take This Cat Home", image: "images/14.png", text: "Open" },
+      { title: "Fears To Fathom", image: "images/15.png", text: "Open" },
+      { title: "Happy Sheepies", image: "images/16.png", text: "Open" },
+      { title: "Hotline Miami", image: "images/17.png", text: "Open" },
+      { title: "Kindergarten", image: "images/18.png", text: "Open" },
+      { title: "Lacys Flashgames", image: "images/19.png", text: "Open" },
+      { title: "Milkman Karlson", image: "images/20.png", text: "Open" },
+      { title: "Omori Fixed", image: "images/21.png", text: "Open" },
+      { title: "People Playground", image: "images/22.png", text: "Open" },
+      { title: "Pizza Tower", image: "images/23.png", text: "Open" },
+      { title: "Raft", image: "images/24.png", text: "Open" },
+      { title: "Repo", image: "images/25.png", text: "Open" },
+      { title: "Slender", image: "images/26.png", text: "Open" },
+      { title: "Speed Stars", image: "images/27.png", text: "Open" },
+      { title: "Thats Not My Neighbor", image: "images/28.png", text: "Open" },
+      { title: "The Man In The Window", image: "images/29.png", text: "Open" },
+      { title: "Ube Main", image: "images/30.png", text: "Open" },
+      { title: "Ultrakill", image: "images/31.png", text: "Open" },
+      { title: "Underswap", image: "images/32.png", text: "Open" },
+      { title: "Undertale Main", image: "images/33.png", text: "Open" },
+      { title: "Undertale Red Pc Ver", image: "images/34.png", text: "Open" },
+      { title: "Undertale Yellow", image: "images/35.png", text: "Open" },
+      { title: "Web Fishing", image: "images/36.png", text: "Open" },
+      { title: "Yume Nikki", image: "images/37.png", text: "Open" }
+    ];
+
+    cards.forEach(cardInfo => {
       const card = document.createElement("div");
       card.className = "card";
       card.innerHTML = `
-        <img src="images/${i + 1}.png" alt="${names[i]}">
-        <h2>${names[i]}</h2>
-        <p>Open</p>
+        <img src="${cardInfo.image}" alt="${cardInfo.title}">
+        <h2>${cardInfo.title}</h2>
+        <p>${cardInfo.text}</p>
       `;
       grid.appendChild(card);
-    }
+    });
   </script>
 </body>
 </html>
-
-
-
