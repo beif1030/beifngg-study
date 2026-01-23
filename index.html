@@ -72,6 +72,14 @@
       color: #ff6ec7;
       font-weight: 600;
     }
+    iframe {
+      width: 90%;
+      height: 600px;
+      border: none;
+      margin-bottom: 40px;
+      border-radius: 15px;
+      box-shadow: 0 15px 30px rgba(0,0,0,0.5);
+    }
   </style>
 </head>
 
@@ -80,45 +88,16 @@
 
   <div class="grid" id="grid"></div>
 
+  <iframe id="preview" src=""></iframe>
+
   <script>
     const grid = document.getElementById("grid");
+    const preview = document.getElementById("preview");
 
     const cards = [
-      { title: "Amanda The Adventurer", image: "https://tse4.mm.bing.net/th/id/OIP.IQaWt7ftornapYXdSaKPIQHaFw?rs=1&pid=ImgDetMain&o=7&rm=3", text: "Open" },
-      { title: "Andys Apple Farm", image: "https://img.itch.zone/aW1nLzY4MzM2OTkucG5n/original/Ne3taN.png", text: "Open" },
-      { title: "Baldi Plus", image: "https://preview.redd.it/xyd0jgg1bnx51.jpg?width=1080&crop=smart&auto=webp&s=4171d598d19a4a0e64e2f71ccad18fb6a74901fb", text: "Open" },
-      { title: "Baldi Remaster", image: "https://tse3.mm.bing.net/th/id/OIP.nBQtrcbONDo70XKAj6WrRQHaEc?rs=1&pid=ImgDetMain&o=7&rm=3", text: "Open" },
-      { title: "Bendy", image: "https://th.bing.com/th/id/OIP.TZCh9nZvSP2qLTFC7rJQmAHaEK?o=7rm=3&rs=1&pid=ImgDetMain&o=7&rm=3", text: "Open" },
-      { title: "Bergentruck", image: "https://th.bing.com/th/id/OIP.R0XRLgzF9p9EU8rpHQvRYQAAAA?o=7rm=3&rs=1&pid=ImgDetMain&o=7&rm=3", text: "Open" },
-      { title: "Bloodmoney", image: "https://tse1.mm.bing.net/th/id/OIP.J7NvrsLsR5FrodrVqcrRwAHaEK?rs=1&pid=ImgDetMain&o=7&rm=3", text: "Open" },
-      { title: "Buckshot Roulette", image: "https://images.g2a.com/470x276/1x1x0/buckshot-roulette-pc-steam-key-global-i10000504233001/93461eba6c2f4fa78a0edd87", text: "Open" },
-      { title: "Class Of 09", image: "https://walkthroughwizard.com/wp-content/uploads/2024/09/20240923093210_1.jpg", text: "Open" },
-      { title: "Cuphead", image: "https://assets.nintendo.com/image/upload/c_fill,w_1200/q_auto:best/f_auto/dpr_2.0/ncom/en_US/games/switch/c/cuphead-switch/hero", text: "Open" },
-      { title: "Dead Plate", image: "https://img.itch.zone/aW1nLzEzOTA4MTQ2LnBuZw==/original/JnmteB.png", text: "Open" },
-      { title: "Deadseat", image: "https://tse4.mm.bing.net/th/id/OIP.nUq4pli_FI5Q4x9wmaViSAHaD4?rs=1&pid=ImgDetMain&o=7&rm=3", text: "Open" },
-      { title: "Deltarune", image: "https://cdn.discordapp.com/attachments/1402295376874176594/1463369846908784660/Screenshot_2025-08-10_120249.png?ex=697194df&is=6970435f&hm=4f4fad98c0ab2531b9aa76f78ffda26b77a4810933359261e11f651e564961d5&", text: "Open" },
-      { title: "Do Not Take This Cat Home", image: "https://i.pinimg.com/originals/19/63/8e/19638e2d2ba9699349ca31014424e9f3.jpg", text: "Open" },
-      { title: "Fears To Fathom", image: "https://tse4.mm.bing.net/th/id/OIP.0tx5YBzrakoADFta6kH8ugHaLH?rs=1&pid=ImgDetMain&o=7&rm=3", text: "Open" },
-      { title: "Happy Sheepies", image: "https://cdn.mobygames.com/covers/19135275-happy-sheepies-windows-front-cover.jpg", text: "Open" },
-      { title: "Hotline Miami", image: "https://gamingbolt.com/wp-content/uploads/2023/10/hotline-miami-1024x576.jpg", text: "Open" },
-      { title: "Kindergarten", image: "https://cdn.akamai.steamstatic.com/steam/apps/589590/header.jpg", text: "Open" },
-      { title: "Lacys Flashgames", image: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3459340/6f96e03a0180f0bd9a40c95486b8521816ac3d73/capsule_616x353.jpg?t=1741028783", text: "Open" },
-      { title: "Milkman Karlson", image: "https://www.giantbomb.com/a/uploads/scale_small/49/496786/3230256-unnamed.jpg", text: "Open" },
-      { title: "Omori", image: "https://omori.wiki/images/thumb/a/a6/Title_Screen.png/800px-Title_Screen.png", text: "Open" },
-      { title: "People Playground", image: "https://tse3.mm.bing.net/th/id/OIP.sKBV9X4frPyWVwXmZk6QmAHaDb?rs=1&pid=ImgDetMain&o=7&rm=3", text: "Open" },
-      { title: "Pizza Tower", image: "https://th.bing.com/th/id/OIP.7CANQJdXP89zYSlUljKCSAHaEK?o=7rm=3&rs=1&pid=ImgDetMain&o=7&rm=3", text: "Open" },
-      { title: "Raft", image: "https://steamuserimages-a.akamaihd.net/ugc/1827914542191920579/ABA32E3940923C3FF2C4F074B97F45E2175F2A28/", text: "Open" },
-      { title: "Repo", image: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3241660/fda868129a96b58493b4935c7e2c3390b4ebb108/capsule_616x353.jpg?t=1739183843", text: "Open" },
-      { title: "Slender", image: "https://th.bing.com/th/id/OIP.Jqky2ZfARold1qnD9km33AHaHa?o=7rm=3&rs=1&pid=ImgDetMain&o=7&rm=3", text: "Open" },
-      { title: "Speed Stars", image: "https://geometrygames.io/data/image/game/speed-stars/speed-stars.jpg", text: "Open" },
-      { title: "Thats Not My Neighbor", image: "https://static.tvtropes.org/pmwiki/pub/images/thats_not_my_neighbor_title.PNG", text: "Open" },
-      { title: "The Man In The Window", image: "https://img.itch.zone/aW1nLzg4MTQxMjcucG5n/original/8niDBK.png", text: "Open" },
-      { title: "Ultrakill", image: "https://static.tvtropes.org/pmwiki/pub/images/ultrakill_cover.jpg", text: "Open" },
-      { title: "Underswap", image: "https://tse1.mm.bing.net/th/id/OIP.mcs17Ymhi4azbVLuRHkfsAHaEK?rs=1&pid=ImgDetMain&o=7&rm=3", text: "Open" },
-      { title: "Undertale Red", image: "https://i.pinimg.com/736x/a0/39/3a/a0393a440d921bdbfff7c60f3faf6c4d.jpg", text: "Open" },
-      { title: "Undertale Yellow", image: "https://th.bing.com/th/id/OIP.mT9vTdj7elumOjwEa7PlxgHaFj?o=7rm=3&rs=1&pid=ImgDetMain&o=7&rm=3", text: "Open" },
-      { title: "Web Fishing", image: "https://tse1.mm.bing.net/th/id/OIP.AkfUPS9Xt5hPRmQQC2xDmwHaHa?rs=1&pid=ImgDetMain&o=7&rm=3", text: "Open" },
-      { title: "Yume Nikki", image: "https://cdn2.steamgriddb.com/file/sgdb-cdn/icon/06409663226af2f3114485aa4e0a23b4/8/256x256.png", text: "Open" }
+      { title: "Amanda The Adventurer", image: "https://tse4.mm.bing.net/th/id/OIP.IQaWt7ftornapYXdSaKPIQHaFw?rs=1&pid=ImgDetMain&o=7&rm=3", file: "amanda.html" },
+      { title: "Andys Apple Farm", image: "https://img.itch.zone/aW1nLzY4MzM2OTkucG5n/original/Ne3taN.png", file: "andys.html" },
+      { title: "Baldi Plus", image: "https://preview.redd.it/xyd0jgg1bnx51.jpg?width=1080&crop=smart&auto=webp&s=4171d598d19a4a0e64e2f71ccad18fb6a74901fb", file: "baldi.html" }
     ];
 
     cards.forEach(cardInfo => {
@@ -127,11 +106,15 @@
       card.innerHTML = `
         <img src="${cardInfo.image}" alt="${cardInfo.title}">
         <h2>${cardInfo.title}</h2>
-        <p>${cardInfo.text}</p>
+        <p>Open</p>
       `;
+
+      card.addEventListener("click", () => {
+        preview.src = cardInfo.file;
+      });
+
       grid.appendChild(card);
     });
   </script>
-  <p>T</p>
 </body>
 </html>
