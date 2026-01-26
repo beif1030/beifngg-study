@@ -114,7 +114,7 @@
   <div class="grid" id="grid"></div>
 
   <div id="iframeContainer">
-    <iframe id="preview" src=""></iframe>
+    <iframe id="preview" src="" tabindex="0" sandbox="allow-scripts allow-same-origin allow-pointer-lock allow-modals"></iframe>
     <button id="closeBtn">Close</button>
   </div>
 
@@ -137,7 +137,7 @@
       { title: "Cuphead", image: "https://assets.nintendo.com/image/upload/c_fill,w_1200/q_auto:best/f_auto/dpr_2.0/ncom/en_US/games/switch/c/cuphead-switch/hero", file: "cuphead/index.html" },
       { title: "Dead Plate", image: "https://img.itch.zone/aW1nLzEzOTA4MTQ2LnBuZw==/original/JnmteB.png", file: "dead-plate/index.html" },
       { title: "Deadseat", image: "https://tse4.mm.bing.net/th/id/OIP.nUq4pli_FI5Q4x9wmaViSAHaD4?rs=1&pid=ImgDetMain&o=7&rm=3", file: "deadseat/index.html" },
-      { title: "Deltarune", image: "https://static1.cbrimages.com/wordpress/wp-content/uploads/2020/10/Deltarune-Title-Art.jpg", file: "deltarune/index.html" },
+      { title: "Deltarune", image: "https://static1.cbrimages.com/wordpress/wp-content/uploads/2020/10/Deltarune-Title-Art.jpg", file: "deltarune.html" },
       { title: "Do Not Take This Cat Home", image: "https://i.pinimg.com/originals/19/63/8e/19638e2d2ba9699349ca31014424e9f3.jpg", file: "donottakethiscathome/index.html" },
       { title: "Fears To Fathom", image: "https://tse4.mm.bing.net/th/id/OIP.0tx5YBzrakoADFta6kH8ugHaLH?rs=1&pid=ImgDetMain&o=7&rm=3", file: "fears-to-fathom/index.html" },
       { title: "Happy Sheepies", image: "https://cdn.mobygames.com/covers/19135275-happy-sheepies-windows-front-cover.jpg", file: "happy-sheepies/index.html" },
@@ -157,7 +157,7 @@
       { title: "Ultrakill", image: "https://static.tvtropes.org/pmwiki/pub/images/ultrakill_cover.jpg", file: "ultrakill/index.html" },
       { title: "Underswap", image: "https://tse1.mm.bing.net/th/id/OIP.mcs17Ymhi4azbVLuRHkfsAHaEK?rs=1&pid=ImgDetMain&o=7&rm=3", file: "underswap/index.html" },
       { title: "Undertale Red", image: "https://i.pinimg.com/736x/a0/39/3a/a0393a440d921bdbfff7c60f3faf6c4d.jpg", file: "undertale-red-pc-ver/index.html" },
-      { title: "Undertale Yellow", image: "https://th.bing.com/th/id/OIP.mT9vTdj7elumOjwEa7PlxgHaFj?o=7rm=3&rs=1&pid=ImgDetMain&o=7&rm=3", file: "undertale yellow.html" },
+      { title: "Undertale Yellow", image: "https://th.bing.com/th/id/OIP.mT9vTdj7elumOjwEa7PlxgHaFj?o=7rm=3&rs=1&pid=ImgDetMain&o=7&rm=3", file: "undertale-yellow/index.html" },
       { title: "Web Fishing", image: "https://tse1.mm.bing.net/th/id/OIP.AkfUPS9Xt5hPRmQQC2xDmwHaHa?rs=1&pid=ImgDetMain&o=7&rm=3", file: "web-fishing/index.html" },
       { title: "Yume Nikki", image: "https://cdn2.steamgriddb.com/file/sgdb-cdn/icon/06409663226af2f3114485aa4e0a23b4/8/256x256.png", file: "yume-nikki/index.html" }
     ];
@@ -173,6 +173,7 @@
       card.addEventListener("click", () => {
         preview.src = cardInfo.file;
         iframeContainer.style.display = "flex";
+        preview.focus();
       });
       grid.appendChild(card);
     });
